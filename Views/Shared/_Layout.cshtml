@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Gato Mia</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Yaldevi:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=ADLAM+Display&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/css/site.css">
+
+
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo-title-container">
+                <a asp-area="" asp-controller="Home" asp-action="Index">
+                <img src="~/img/LogoGatoMia.png" alt="Logo Gato Mia" class="logo"></a>
+                <h1>Gato Mia</h1>
+            </div>
+
+            <ul>
+                <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Sobre">Sobre</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Contato">Contato</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Login">Login</a></li>
+                <li><a asp-area="" asp-controller="Users" asp-action="Index">CRUD</a></li>
+                
+            </ul>
+            <div class="search">
+                <input type="text" placeholder="Busca">
+                <img src="~/img/Lupa.png" alt="Buscar" class="lupa">
+            </div>
+        </nav>
+    </header>
+
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+
+
+
+    <!-- TESTE -->
+    <!-- TESTE -->
+
+
+    <main role="main" class="pb-3">
+        <div class="container mt-3">
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div class="alert alert-success" role="alert">
+                    @TempData["SuccessMessage"]
+                </div>
+            }
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div class="alert alert-danger" role="alert">
+                    @TempData["ErrorMessage"]
+                </div>
+            }
+        </div>
+        @RenderBody()
+    </main>
+
+
+    <!-- TESTE -->
+    <!-- TESTE -->
+
+
+
+
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            <div class="social-media">
+
+            <a href="https://web.whatsapp.com/" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="https://www.facebook.com/?locale=pt_BR" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="https://twitter.com/?lang=pt-br" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/login/pt" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            &copy; 2025 - Gato Mia - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacidade</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

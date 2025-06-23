@@ -1,0 +1,7 @@
+C:\Users\bethr\OneDrive\Área de Trabalho\Fatec\-- BACKUP BACKUP --\WebGatoMia-V4-1106\WebGatoMia\wwwroot\favicon_io\android-chrome-192x192.png
+C:\Users\bethr\OneDrive\Área de Trabalho\Fatec\-- BACKUP BACKUP --\WebGatoMia-V4-1106\WebGatoMia\wwwroot\favicon_io\android-chrome-512x512.png
+C:\Users\bethr\OneDrive\Área de Trabalho\Fatec\-- BACKUP BACKUP --\WebGatoMia-V4-1106\WebGatoMia\wwwroot\favicon_io\apple-touch-icon.png
+C:\Users\bethr\OneDrive\Área de Trabalho\Fatec\-- BACKUP BACKUP --\WebGatoMia-V4-1106\WebGatoMia\wwwroot\favicon_io\favicon-16x16.png
+C:\Users\bethr\OneDrive\Área de Trabalho\Fatec\-- BACKUP BACKUP --\WebGatoMia-V4-1106\WebGatoMia\wwwroot\favicon_io\favicon-32x32.png
+C:\Users\bethr\OneDrive\Área de Trabalho\Fatec\-- BACKUP BACKUP --\WebGatoMia-V4-1106\WebGatoMia\wwwroot\favicon_io\favicon.ico
+C:\Users\bethr\OneDrive\Área de Trabalho\Fatec\-- BACKUP BACKUP --\WebGatoMia-V4-1106\WebGatoMia\wwwroot\favicon_io\site.webmanifest
