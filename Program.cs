@@ -1,6 +1,11 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using WebGatoMia.Data;
 using Microsoft.OpenApi.Models;
+using WebGatoMia.Data;
+using WebGatoMia.Models;
+using WebGatoMia.Services.Interfaces;
+using WebGatoMia.Services.Implementations;
+
 
 namespace WebGatoMia
 {
@@ -26,10 +31,19 @@ namespace WebGatoMia
             });
 
             // Banco de dados
+            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
             builder.Services.AddDbContext<GatoMiaDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+            builder.Services.AddScoped<IUserService, UserService>();
+            builder.Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
+            builder.Services.AddScoped<IUserTypeService, UserTypeService>();
+
+
             var app = builder.Build();
+
+
 
             // Erros / HTTPS
             if (!app.Environment.IsDevelopment())
@@ -38,19 +52,15 @@ namespace WebGatoMia
                 app.UseHsts();
             }
 
-            app.UseSwagger();
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "API Gato Mia v1");
-                c.RoutePrefix = "swagger"; // Acesse: /swagger
-            });
-
+         
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseAuthentication();
 
             app.MapControllerRoute(
                 name: "default",
