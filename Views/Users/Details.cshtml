@@ -1,0 +1,34 @@
+﻿@model WebGatoMia.Models.User
+
+@{
+    ViewData["Title"] = "Detalhes do Usuário";
+}
+
+<div class="details-container">
+    <h2>@ViewData["Title"]</h2>
+
+    <div class="details-row">
+        <span class="details-label">Nome Completo</span>
+        <span class="details-value">@Model.Name</span>
+    </div>
+    <div class="details-row">
+        <span class="details-label">E-mail:</span>
+        <span class="details-value">@Model.Email</span>
+    </div>
+    <div class="details-row">
+        <span class="details-label">Telefone:</span>
+        <span class="details-value">@Model.Phone</span>
+    </div>
+    <div class="details-row">
+        <span class="details-label">Tipo de usuário:</span>
+        <span class="details-value">@Model.UserType?.Name</span>
+    </div>
+    <div class="details-row">
+        <span class="details-label">Ativo:</span>
+        <span class="details-value">@(Model.IsActive ? "Sim" : "Não")</span>
+    </div>
+
+    <div class="details-actions">
+        <a asp-action="Index" class="btn">Voltar</a>
+    </div>
+</div>
